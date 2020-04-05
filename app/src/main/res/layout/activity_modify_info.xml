@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ResetPasswordActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/bar_layout"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_currentfirstname"
+            app:met_floatingLabel="normal"
+            android:hint="Current First name"
+            android:layout_marginTop="20dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_newfirstname"
+            app:met_floatingLabel="normal"
+            android:hint="New First name"
+            android:layout_marginTop="20dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change your first name"
+            android:id="@+id/btn_changeFirstName"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_currentlastname"
+            app:met_floatingLabel="normal"
+            android:hint="Last name"
+            android:layout_marginTop="20dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_newlastname"
+            app:met_floatingLabel="normal"
+            android:hint="New Last name"
+            android:layout_marginTop="20dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHANGE YOUR LAST NAME"
+            android:id="@+id/btn_changeLastName"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_currentemail"
+            android:inputType="textEmailAddress"
+            app:met_floatingLabel="normal"
+            android:hint="Current email address"
+            android:layout_marginTop="20dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_newemail"
+            android:inputType="textEmailAddress"
+            app:met_floatingLabel="normal"
+            android:hint="New email address"
+            android:layout_marginTop="20dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHANGE YOUR EMAIL ADDRESS"
+            android:id="@+id/btn_changeEmail"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_currentpassword"
+            android:inputType="textPassword"
+            app:met_floatingLabel="normal"
+            android:hint="Current password"
+            android:layout_marginTop="20dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_newpassword"
+            android:inputType="textPassword"
+            app:met_floatingLabel="normal"
+            android:hint="New password"
+            android:layout_marginTop="20dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHANGE PASSWORD"
+            android:id="@+id/btn_changePassword"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="#000"
+            android:text=""/>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

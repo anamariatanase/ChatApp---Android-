@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "779222370227",
+    "firebase_url": "https://proiectril-79067.firebaseio.com",
+    "project_id": "proiectril-79067",
+    "storage_bucket": "proiectril-79067.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779222370227:android:97890682bb4ef9af",
+        "android_client_info": {
+          "package_name": "com.example.aniska.proiectrilchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779222370227-g2tccll5lg63cnnu89sg7s3r72jmht5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aniska.proiectrilchat",
+            "certificate_hash": "454cad4cf43f630c18eb929e04601ac744e346fe"
+          }
+        },
+        {
+          "client_id": "779222370227-9seuhvruhu6k3usujtidle07nt1dc9hh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3ql_22REUOeDyoNZe3PMtMki8VCupHUU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779222370227-9seuhvruhu6k3usujtidle07nt1dc9hh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
