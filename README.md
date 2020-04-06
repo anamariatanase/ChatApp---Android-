@@ -8,5 +8,5 @@
  
  <div align="center">
 
-![](videoHowTheAppWorks.gif)
+![](howTheAppWorks.gif)
 </div
