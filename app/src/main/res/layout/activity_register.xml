@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:background="@color/lavender">
 
 
     <include
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create a new account"
+            android:textColor="@color/purple"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -73,7 +75,7 @@
             android:layout_height="wrap_content"
             android:text="Sign Up"
             android:id="@+id/btn_signup"
-            android:background="@color/colorPrimary"
+            android:background="@color/purple"
             android:layout_marginTop="10dp"
             android:textColor="#FFFF"
 

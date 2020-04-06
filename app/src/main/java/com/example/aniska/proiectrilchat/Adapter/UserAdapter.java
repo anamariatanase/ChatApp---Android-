@@ -120,7 +120,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                     if (firebaseUser != null && chat != null) {
                         if (chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userid) ||
                                 chat.getReceiver().equals(userid) && chat.getSender().equals(firebaseUser.getUid())) {
-                            theLastMessage = chat.getMessage();
+                            theLastMessage = decryptMessage(chat.getMessage(),9);
                         }
                     }
                 }
@@ -144,6 +144,29 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             }
         });
 
+    }
+    private String encryptMessage(String talk, int k) {
+        // make the string encrypted before sending to the database
+
+        k = k % 26 + 26;
+        StringBuilder encoded = new StringBuilder();
+        for (char i : talk.toCharArray()) {
+            if (Character.isLetter(i)) {
+                if (Character.isUpperCase(i)) {
+                    encoded.append((char) ('A' + (i - 'A' + k) % 26));
+                } else {
+                    encoded.append((char) ('a' + (i - 'a' + k) % 26));
+                }
+            } else {
+                encoded.append(i);
+            }
+        }
+        return encoded.toString();
+    }
+
+    private String decryptMessage(String m, int key) {
+        // make string readable on the receiver's device
+        return encryptMessage(m, 26 - key);
     }
 
 }

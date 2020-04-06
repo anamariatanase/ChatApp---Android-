@@ -75,6 +75,14 @@ public class ModifyInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
+            }
+        });
+
+        btn_changeFirstName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -89,18 +97,18 @@ public class ModifyInfoActivity extends AppCompatActivity {
                             if (ceva.equals(currentFirstName)) {
                                 reference.child("firstname").setValue(newFirstName);
                                 finish();
-                            } else {
-                                Toast.makeText(ModifyInfoActivity.this, "Wrong current First Name", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ModifyInfoActivity.this, "First Name changed", Toast.LENGTH_SHORT).show();
+
                             }
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(ModifyInfoActivity.this, "Wrong current First Name", Toast.LENGTH_SHORT).show();
 
                     }
                 });
-
             }
         });
 
@@ -122,14 +130,14 @@ public class ModifyInfoActivity extends AppCompatActivity {
                             if (ceva.equals(currentLastName)) {
                                 reference.child("lastname").setValue(newLastName);
                                 finish();
-                            } else {
-                                Toast.makeText(ModifyInfoActivity.this, "Wrong current Last Name", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ModifyInfoActivity.this, "Last Name changed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(ModifyInfoActivity.this, "Wrong current Last Name", Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -154,16 +162,17 @@ public class ModifyInfoActivity extends AppCompatActivity {
                         } else {
                             if (ceva.equals(currentPassword)) {
                                 reference.child("password").setValue(newPassword);
-                                user1.updatePassword(newPassword);
+                                user1.updatePassword((newPassword));
                                 finish();
-                            } else {
-                                Toast.makeText(ModifyInfoActivity.this, "Wrong current Password", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ModifyInfoActivity.this, "Password changed", Toast.LENGTH_SHORT).show();
+
                             }
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(ModifyInfoActivity.this, "Wrong current Password", Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -188,15 +197,21 @@ public class ModifyInfoActivity extends AppCompatActivity {
                             if (ceva.equals(currentEmail)) {
                                 reference.child("email").setValue(newEmail);
                                 user1.updateEmail(newEmail);
+                                Toast.makeText(ModifyInfoActivity.this, "Email changed", Toast.LENGTH_SHORT).show();
                                 finish();
-                            } else {
+
+
+                            }else{
                                 Toast.makeText(ModifyInfoActivity.this, "Wrong current Email address", Toast.LENGTH_SHORT).show();
+
                             }
                         }
+
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(ModifyInfoActivity.this, "Wrong current Email address", Toast.LENGTH_SHORT).show();
 
                     }
                 });

@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
     MaterialEditText username, email, password, firstname, lastname;
-    Button btn_signup;
+    Button btn_signUp;
 
     FirebaseAuth auth;
     DatabaseReference reference;
@@ -43,11 +43,11 @@ public class RegisterActivity extends AppCompatActivity {
         firstname = findViewById(R.id.firsname);
         lastname = findViewById(R.id.lastname);
         password = findViewById(R.id.password);
-        btn_signup = findViewById(R.id.btn_signup);
+        btn_signUp = findViewById(R.id.btn_signup);
 
         auth = FirebaseAuth.getInstance();
 
-        btn_signup.setOnClickListener(new View.OnClickListener() {
+        btn_signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txt_username = username.getText().toString();
@@ -107,5 +107,28 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private String encrypt(String talk, int k) {
+        // make the string encrypted before sending to the database
+
+        k = k % 26 + 26;
+        StringBuilder encoded = new StringBuilder();
+        for (char i : talk.toCharArray()) {
+            if (Character.isLetter(i)) {
+                if (Character.isUpperCase(i)) {
+                    encoded.append((char) ('A' + (i - 'A' + k) % 26));
+                } else {
+                    encoded.append((char) ('a' + (i - 'a' + k) % 26));
+                }
+            } else {
+                encoded.append(i);
+            }
+        }
+        return encoded.toString();
+    }
+
+    private String decrypt(String m, int key) {
+        // make string readable on the receiver's device
+        return encrypt(m, 26 - key);
     }
 }

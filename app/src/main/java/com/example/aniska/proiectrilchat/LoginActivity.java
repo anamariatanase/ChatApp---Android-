@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
                     Toast.makeText(LoginActivity.this, "All fields are required!", Toast.LENGTH_SHORT).show();
                 } else {
-                    auth.signInWithEmailAndPassword(txt_email, txt_password)
+                    auth.signInWithEmailAndPassword(txt_email, (txt_password))
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -72,5 +72,29 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private String encrypt(String talk, int k) {
+        // make the string encrypted before sending to the database
+
+        k = k % 26 + 26;
+        StringBuilder encoded = new StringBuilder();
+        for (char i : talk.toCharArray()) {
+            if (Character.isLetter(i)) {
+                if (Character.isUpperCase(i)) {
+                    encoded.append((char) ('A' + (i - 'A' + k) % 26));
+                } else {
+                    encoded.append((char) ('a' + (i - 'a' + k) % 26));
+                }
+            } else {
+                encoded.append(i);
+            }
+        }
+        return encoded.toString();
+    }
+
+    private String decrypt(String m, int key) {
+        // make string readable on the receiver's device
+        return encrypt(m, 26 - key);
     }
 }

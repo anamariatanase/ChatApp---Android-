@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.UsersFragment">
+    tools:context=".Fragments.UsersFragment"
+    android:background="@color/lavender">
 
     <EditText
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
         android:layout_below="@id/search_users"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/lavender"
         android:id="@+id/recycler_view"
          />
 

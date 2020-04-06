@@ -103,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
                 viewPagerAdapter.addFragment(new UsersFragment(), "Users");
                 viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
-                viewPagerAdapter.addFragment(new ChartFragment(), "Chart");
+               // Fragment for the CHART part for the RIL project
+                // viewPagerAdapter.addFragment(new ChartFragment(), "Chart");
 
                 viewPager.setAdapter(viewPagerAdapter);
                 tabLayout.setupWithViewPager(viewPager);

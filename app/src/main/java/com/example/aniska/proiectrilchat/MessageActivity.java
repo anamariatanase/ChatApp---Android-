@@ -124,8 +124,6 @@ public class MessageActivity extends AppCompatActivity {
 
                 /** actual writing in files: creating 2 files - uncrypted and crypted - and writing to them */
                 String text = msg;
-                int counterPositive = 0;
-                int counterNegative = 0;
                 File uncryptedFile = new File(Environment.getExternalStorageDirectory() + "/sent_messages.txt");
                 File cryptedFile = new File(Environment.getExternalStorageDirectory() + "/encypted_sent_messages.txt");
                 writeInFile(uncryptedFile, text);
@@ -259,7 +257,6 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
-    ///////////////////////// IDKKKKKKK ///////////////////////////
     private void reviews(final String message){
         DatabaseReference reviews = FirebaseDatabase.getInstance().getReference("Reviews");
         Query query = reviews.orderByKey().equalTo(message);
